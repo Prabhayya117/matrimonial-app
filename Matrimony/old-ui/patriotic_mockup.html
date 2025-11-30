@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patriotic Matchmaking App Mockup - Laptop View</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            /* Align at the top */
+            min-height: 100vh;
+            padding: 30px;
+            /* More padding for overall spaciousness */
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
+            /* For absolute positioning of annotations relative to body */
+        }
+
+        .app-container {
+            width: 375px;
+            /* Fixed mobile width */
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+            /* Crucial for internal annotation positioning */
+            padding-bottom: 70px;
+            /* Space for bottom nav */
+            flex-shrink: 0;
+            margin: 0 40px;
+            /* Space between app and annotations */
+            /* Add this to allow annotations to be outside but still associated */
+            z-index: 1;
+        }
+
+        .header {
+            background-color: #2196f3;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.1em;
+            position: relative;
+        }
+
+        .header .back-arrow {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+        }
+
+        .subheader {
+            background-color: #1976D2;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 5px 15px;
+            font-size: 0.8em;
+            text-align: center;
+        }
+
+        .section {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            /* For mapping to annotations */
+        }
+
+        .section-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .input-item {
+            flex: 1 1 calc(50% - 10px);
+            /* Two columns */
+            min-width: 120px;
+        }
+
+        .input-item input,
+        .input-item select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .input-item label {
+            display: block;
+            font-size: 0.8em;
+            color: #555;
+            margin-bottom: 3px;
+        }
+
+        .buttons-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .buttons-group button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .buttons-group .upload-btn {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .buttons-group .verify-btn {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .search-bar {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23888"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+        }
+
+        .match-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .match-card .name-age {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .match-card .details {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .match-card .quote {
+            font-style: italic;
+            color: #777;
+            font-size: 0.85em;
+        }
+
+        .match-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .match-actions button {
+            flex: 1;
+            padding: 8px;
+            border-radius: 20px;
+            border: 1px solid #2196f3;
+            background-color: white;
+            color: #2196f3;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+
+        .match-actions button.connect {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .compatibility-score {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #eee;
+        }
+
+        .score-circle {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .score-details {
+            flex: 1;
+        }
+
+        .score-details .percentage {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .score-details .label {
+            font-size: 0.8em;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .score-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.8em;
+            color: #555;
+        }
+
+        .score-details ul li {
+            margin-bottom: 3px;
+        }
+
+        .view-details-btn {
+            display: block;
+            width: calc(100% - 30px);
+            margin: 15px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .family-connect {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .family-connect .options {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .family-connect button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .security-trust ul,
+        .events ul,
+        .wallet-fees ul,
+        .recognition ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .security-trust ul li,
+        .events ul li,
+        .wallet-fees ul li,
+        .recognition ul li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .security-trust ul li::before,
+        .events ul li::before,
+        .wallet-fees ul li::before,
+        .recognition ul li::before {
+            content: '•';
+            color: #2196f3;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .security-trust ul li.verified::before {
+            content: '✓';
+            color: #4CAF50;
+        }
+
+        .security-trust ul li.monitored::before {
+            content: '✓';
+            color: #4CAF50;
+        }
+
+        .events button {
+            width: calc(100% - 30px);
+            margin: 15px auto 0;
+            padding: 10px;
+            background-color: #FFC107;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            display: block;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+            background-color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .nav-item {
+            text-align: center;
+            font-size: 0.7em;
+            color: #777;
+        }
+
+        .nav-item.active {
+            color: #2196f3;
+        }
+
+        .nav-item svg {
+            display: block;
+            margin: 0 auto 5px;
+            font-size: 1.5em;
+        }
+
+        /* Annotation styles for Laptop View */
+        .annotation-box {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 2px solid #E91E63;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 0.85em;
+            color: #333;
+            max-width: 280px;
+            /* Wider for better text flow */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+            pointer-events: none;
+            /* Allows interaction with app container underneath */
+        }
+
+        /* Arrows using pseudo-elements */
+        .annotation-box.left-arrow::after {
+            content: '';
+            position: absolute;
+            left: -14px;
+            /* Position to the left of the box */
+            top: 50%;
+            transform: translateY(-50%);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 14px solid #E91E63;
+            /* Arrow pointing left */
+            z-index: 11;
+        }
+
+        .annotation-box.right-arrow::after {
+            content: '';
+            position: absolute;
+            left: -14px;
+            /* Position to the left of the box */
+            top: 50%;
+            transform: translateY(-50%);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 14px solid #E91E63;
+            /* Arrow pointing left */
+            z-index: 11;
+        }
+
+        /* Specific Annotation Placements - Adjusted for Laptop View */
+        /* Positions are relative to the 'body' element or a common parent, not the app-container */
+        /* This places them in the white space next to the app */
+
+        /* Profile Setup Annotations (Left Side) */
+        .annotation-standard-fields {
+            top: 95px;
+            left: calc(50% - 50px);
+        }
+
+        .annotation-patriotism {
+            top: 250px;
+            left: calc(51% - 65px);
+        }
+
+        .annotation-upload-photo {
+            top: 328px;
+            left: calc(55% - 25px);
+        }
+
+        
+        
+
+        /* Search & Match Annotations (Left Side) */
+        .annotation-search-filter {
+            top: 393px;
+            left: calc(45% - -200px);
+            right: calc(9% - 200px);
+        }
+
+        
+
+        .annotation-shortlist-connect {
+            top: 573px;
+            left: calc(93% - 30px);
+        }
+
+        /* Search & Match Annotations (Right Side) */
+        .annotation-compatibility-score {
+            top: 760px;
+            left: calc(82% + 30px);
+        }
+
+        /* General sections for annotations that appear to the right */
+        .annotation-family-connect {
+            top: 930px;
+            left: calc(4% + 255px);
+        }
+
+        .annotation-security-trust {
+            top: 1100px;
+            left: calc(39% + 26px);
+        }
+
+        .annotation-events {
+            top: 1246px;
+            left: calc(18% + 70px);
+        }
+
+        .annotation-wallet-fees {
+            top: 1390px;
+            left: calc(50% + 41px);
+        }
+
+        .annotation-recognition {
+            top: 1500px;
+            left: calc(41% + 250px);
+        }
+
+        .annotation-footer-nav {
+            top: 1650px;
+            left: calc(40% + 250px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="annotation-box annotation-standard-fields left-arrow">
+        **Standard Fields:** Collects basic user biodata (Name, Age, Education, Profession, Location). Implemented by
+        Data Input Team.
+    </div>
+    <div class="annotation-box annotation-patriotism left-arrow">
+        **Critical Matchmaking Input:** Dropdown with options: Seva, Discipline, Nation First. This data feeds the
+        Compatibility Logic Team.
+    </div>
+    <div class="annotation-box annotation-upload-photo left-arrow">
+        **Upload Photo:** Allows user to add a profile picture. Implemented by Data Input Team.
+    </div>
+    <div class="annotation-box annotation-search-filter left-arrow">
+        **Search By Filter:** Allows users to narrow results. Implemented search query logic for Age, Education,
+        Profession, Region.
+    </div>
+    <div class="annotation-box annotation-shortlist-connect left-arrow">
+        **Connectivity Triggers:** Buttons to Shortlist or Request Connect. Logic for these actions handled by
+        Connectivity Team.
+    </div>
+
+    <div class="app-container">
+        <div class="header">
+            <span class="back-arrow">&leftarrow;</span>
+            Matrimony & Family
+        </div>
+        <div class="subheader">
+            Secure Patriotic Matchmaking
+        </div>
+
+        <div class="section" style="padding-bottom: 25px;">
+            <div class="section-title">Profile Setup</div>
+            <div class="input-group">
+                <div class="input-item"><input type="text" placeholder="Name"></div>
+                <div class="input-item"><input type="number" placeholder="Age"></div>
+                <div class="input-item"><input type="text" placeholder="Education"></div>
+                <div class="input-item"><input type="text" placeholder="Profession"></div>
+                <div class="input-item"><input type="text" placeholder="Location"></div>
+                <div class="input-item">
+                    <select>
+                        <option value="">Gender</option>
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-item" style="width: calc(100% - 0px); margin-top: 10px;">
+                <label>Patriotism Values</label>
+                <select>
+                    <option value="Seva">Seva</option>
+                    <option value="Discipline">Discipline</option>
+                    <option value="Nation First">Nation First</option>
+                </select>
+            </div>
+
+            <div class="buttons-group">
+                <button class="upload-btn">Upload Photo</button>
+                <button class="verify-btn">Verify ID</button>
+            </div>
+        </div>
+
+        <div class="search-bar">
+            <input type="search" placeholder="Search by Age | Education | Profession | Region">
+        </div>
+
+        <div class="section" style="padding: 0;">
+            <div class="section-title" style="padding: 15px 15px 0;">Search & Match</div>
+            <div class="match-card">
+                <p class="name-age">Priya Singh (28) | Doctor | Delhi</p>
+                <p class="quote">"Active in Nari Sena Wing – Volunteer in VPRF"</p>
+                <div class="match-actions">
+                    <button>Shortlist</button>
+                    <button class="connect">Request Connect</button>
+                </div>
+            </div>
+
+            <div class="compatibility-score">
+                <div class="score-circle">88%</div>
+                <div class="score-details">
+                    <p class="percentage">Compatible</p>
+                    <p class="label">Based on:</p>
+                    <ul>
+                        <li>Patriotism Score (Seva, Discipline, Nation First)</li>
+                        <li>Education/Profession match</li>
+                        <li>Family background</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="view-details-btn">View Details</button>
+        </div>
+
+        <div class="family-connect">
+            <div class="section-title">Family Connect</div>
+            <p class="options">Option: Invite Parental/Guardians</p>
+            <p class="options">Arrange family video meet via app</p>
+            <button>Start Family Call</button>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Security & Trust</div>
+            <ul>
+                <li class="verified">Verified IDs & References</li>
+                <li class="monitored">All chats monitored for safety</li>
+                <li>Block/Report option</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Events</div>
+            <ul>
+                <li>National Patriotic Matrimony Meet (Delhi, Dec)</li>
+                <li>State-level Family Meets (quarterly)</li>
+            </ul>
+            <button>Register for Event</button>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Wallet & Fees</div>
+            <ul>
+                <li>Registration fee: ₹500</li>
+                <li>Event Fee: ₹1000 (State/National meets)</li>
+                <li>Discounts for active Seva/VPRF members</li>
+            </ul>
+        </div>
+
+        <div class="section" style="border-bottom: none;">
+            <div class="section-title">Recognition</div>
+            <ul>
+                <li>Families recognized for inter-regional/unity marriages</li>
+                <li>Patriotic Couples featured in Media Hub</li>
+            </ul>
+        </div>
+
+        <div class="footer-nav">
+            <div class="nav-item active">Home</div>
+            <div class="nav-item">Family Connect</div>
+            <div class="nav-item">Matrimony</div>
+            <div class="nav-item">Media</div>
+            <div class="nav-item">More</div>
+        </div>
+    </div>
+
+    <div class="annotation-box annotation-compatibility-score right-arrow">
+        **Compatibility Score:** Metric derived from Profile data. Logic implemented by Compatibility Logic Team.
+    </div>
+    <div class="annotation-box annotation-family-connect right-arrow">
+        **Family Connect:** Options for parental involvement and video calls. Implemented by Connectivity Team.
+    </div>
+    <div class="annotation-box annotation-security-trust right-arrow">
+        **Security & Trust:** Verification status, chat monitoring, and user safety options. Implemented by Security
+        Team.
+    </div>
+    <div class="annotation-box annotation-events right-arrow">
+        **Events:** Lists upcoming community and family meets. Implemented by Events Team.
+    </div>
+    <div class="annotation-box annotation-wallet-fees right-arrow">
+        **Wallet & Fees:** Details registration fees, event costs, and discount eligibility. Implemented by Finance
+        Team.
+    </div>
+    <div class="annotation-box annotation-recognition right-arrow">
+        **Recognition:** Highlights successful matches and media features. Implemented by Marketing/Recognition Team.
+    </div>
+    <div class="annotation-box annotation-footer-nav right-arrow">
+        **Footer Navigation:** Main app navigation bar for core sections. Implemented by UI/Navigation Team.
+    </div>
+
+</body>
+
+</html>

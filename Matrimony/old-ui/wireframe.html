@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patriotic Matchmaking App: Section Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: #2196f3;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .user-profile-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .user-profile-icon svg {
+            width: 50px;
+            height: 50px;
+            fill: #777;
+        }
+
+        .sidebar-nav {
+            width: 100%;
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        .sidebar-nav ul li a:hover,
+        .sidebar-nav ul li a.active {
+            background-color: #e3f2fd;
+            color: #2196f3;
+        }
+
+        .dashboard-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .card-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.2em;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .card ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin: 0;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .card .responsibility {
+            margin-top: auto;
+            /* Push to bottom */
+            padding-top: 15px;
+            border-top: 1px dashed #eee;
+            font-size: 0.8em;
+            color: #777;
+            font-style: italic;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #777;
+            font-size: 0.85em;
+        }
+
+        .footer a {
+            color: #777;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">Patriotic Matchmaking App: Section Overview</div>
+
+    <div class="main-content">
+        <div class="sidebar">
+            <div class="user-profile-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+            </div>
+            <div class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active">User Profile</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-title">User Profile & Data Input</div>
+                <ul>
+                    <li>Basic information fields (Name, Age, Gender, Education, Profession, Location)</li>
+                    <li>**Critical Input: Patriotism Values (Dropdown: Seva, Discipline, Nation First)**</li>
+                    <li>Upload Photo functionality</li>
+                    <li>Trigger for ID Verification process</li>
+                </ul>
+                <div class="responsibility">Responsible Team: Data Input & UI </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Search & Match Display</div>
+                <ul>
+                    <li>Search/Filter functionality (by Age, Education, Profession, Region)</li>
+                    <li>Display of Match Result Cards (Name, Age, Profession, Location, Patriotic Quote)</li>
+                    <li>Display of "Shortlist" button (Logic handled by Matchmaking Team)</li>
+                    <li>Display of "Request Connect" button (Logic handled by Matchmaking Team)</li>
+                </ul>
+                <div class="responsibility">Responsible Team: Search UI & Data Display </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Matchmaking & Connectivity Logic</div>
+                <ul>
+                    <li>Calculates **Compatibility Score** (based on Patriotism, Education, Family)</li>
+                    <li>Handles "Shortlist" action logic</li>
+                    <li>Manages "Request Connect" action logic</li>
+                    <li>"Family Connect" features (Invite Parents/Guardians, Start Family Call)</li>
+                </ul>
+                <div class="responsibility">Responsible Team: Matchmaking Logic</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Security & Trust</div>
+                <ul>
+                    <li>Verified IDs & References system (receives trigger from Data Input)</li>
+                    <li>Chat monitoring for safety</li>
+                    <li>Block/Report User functionality</li>
+                    <li>Wallet & Fees management (Registration, Event Fees, Discounts)</li>
+                </ul>
+                <div class="responsibility">Responsible Team: Security & Finance</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Events & Community Engagement</div>
+                <ul>
+                    <li>Lists National/State Patriotic Matrimony Meets</li>
+                    <li>"Register for Event" functionality</li>
+                    <li>Manages Event details and participant data</li>
+                </ul>
+                <div class="responsibility">Responsible Team: Events & Logistics</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Recognition & Media Hub</div>
+                <ul>
+                    <li>Highlights successful patriotic couples/marriages</li>
+                    <li>Features in Media Hub</li>
+                    <li>Recognizes families for inter-regional/unity marriages</li>
+                </ul>
+                <div class="responsibility">Responsible Team: Marketing & Public Relations</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+    </div>
+</body>
+
+</html>

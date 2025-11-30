@@ -1,0 +1,42 @@
+/* css/variables.css */
+/* --- Global & Variables --- */
+:root {
+    /* Color Palette - Shades of Blue (Updated) */
+    --primary-blue: #1976d2;
+    /* Core Professional Blue (Deeper) */
+    --secondary-blue: #42a5f5;
+    /* Lighter/Accent Blue */
+    --dark-blue: #0d47a1;
+    /* Deep Blue for Contrast & Text */
+    --subtle-grey-blue: #cfd8dc;
+    /* Subtle Grey-Blue for Borders/Dividers */
+    --success-green: #66bb6a;
+    /* Verification/Success */
+    --danger-red: #ef5350;
+    /* Shortlist/Alert Red */
+
+    /* Gradients */
+    --primary-gradient: linear-gradient(100deg, var(--primary-blue), var(--secondary-blue));
+    --hero-gradient: linear-gradient(135deg, #1565c0, #4fc3f7);
+    /* Deep to Light Blue */
+    --glass-background: rgba(255, 255, 255, 0.75);
+    /* Translucent White for Glass */
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    /* Sleek Glass Shadow */
+
+    /* Structural */
+    --background-color: #f0f4f8;
+    /* Light Blue-Grey Background */
+    --card-background: #ffffff;
+    /* White Cards (overwritten by glass effect) */
+    --light-highlight: #e3f2fd;
+    /* Very light blue for highlights */
+    --light-red: #fff0f0;
+    /* Soft pink for shortlist background */
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --font-family: 'Poppins', sans-serif;
+
+    /* Effects */
+    --transition-speed: 0.3s;
+}

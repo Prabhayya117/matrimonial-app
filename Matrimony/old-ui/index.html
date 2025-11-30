@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimony & Family Matchmaking</title>
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/effects.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="custom-cursor cursor-follower"></div>
+
+    <div class="app-container">
+        <header class="top-bar">
+            <i class="fas fa-arrow-left hover-target"></i>
+            <div class="header-content">
+                <h1>Matrimony & Family</h1>
+                <p class="subtitle">"Patriotism • Values • Togetherness"</p>
+            </div>
+        </header>
+
+        <main class="main-content-scroll">
+
+            <section class="hero-strip">
+                <div class="hero-content">
+                    <i class="fas fa-ring hero-icon"></i>
+                    <div class="hero-text">
+                        <h2>Secure Patriotic Matchmaking</h2>
+                        <p>"Connecting families with shared values, respect, and Rashtrabhakti."</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card profile-setup">
+                <h2><i class="fas fa-user-edit icon-left"></i> Profile Setup</h2>
+                <form>
+                    <div class="field-group-row">
+                        <div class="field-group"><label>Name:</label><input type="text" placeholder="Full Name"></div>
+                        <div class="field-group"><label>Age:</label><input type="number" placeholder="25" min="1" id="age-input"></div>
+                    </div>
+                    <div class="field-group-row">
+                        <div class="field-group"><label>Education:</label>
+                            <input type="text" placeholder="e.g., M.Tech" list="education-suggestions" id="education-input">
+                            <datalist id="education-suggestions">
+                                <option value="B.Tech">
+                                <option value="M.Tech">
+                                <option value="MBBS">
+                                <option value="MD/MS">
+                                <option value="M.A.">
+                                <option value="Ph.D.">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="field-group-row">
+                        <div class="field-group"><label>Profession:</label>
+                            <input type="text" placeholder="e.g., Doctor" list="profession-suggestions" id="profession-input">
+                            <datalist id="profession-suggestions">
+                                <option value="Doctor">
+                                <option value="Engineer">
+                                <option value="IAS Officer">
+                                <option value="Software Developer">
+                                <option value="Teacher">
+                                <option value="Army Officer">
+                            </datalist>
+                        </div>
+                        <div class="field-group"><label>Location:</label>
+                            <input type="text" placeholder="City/State" list="location-suggestions" id="location-input">
+                            <datalist id="location-suggestions">
+                                <option value="New Delhi">
+                                <option value="Mumbai">
+                                <option value="Bangalore">
+                                <option value="Chennai">
+                                <option value="Kolkata">
+                                <option value="Hyderabad">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label>Patriotism Values:</label>
+                        <select class="hover-target">
+                            <option>Seva</option>
+                            <option>Discipline</option>
+                            <option>Nation First</option>
+                        </select>
+                    </div>
+                    <div class="action-buttons">
+                        <button type="button" class="action-btn upload-photo hover-target"><i class="fas fa-camera"></i>
+                            Upload
+                            Photo</button>
+                        <button type="button" class="action-btn verify-id hover-target"><i
+                                class="fas fa-check-circle"></i> Verify
+                            ID</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card search-match">
+                <h2><i class="fas fa-search icon-left"></i> Search & Match</h2>
+                <div class="search-input-group hover-target">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="Search by: Age | Education | Profession | Region"
+                        class="hover-target">
+                </div>
+
+                <div class="match-result hover-target">
+                    <div class="result-header">
+                        <span class="name-age">Priya Singh (28)</span>
+                        <span class="details-divider">|</span>
+                        <span class="profession">Doctor</span>
+                        <span class="details-divider">|</span>
+                        <span class="location">Delhi</span>
+                    </div>
+                    <p class="status-quote">
+                        "Active in Nari Sena Wing • Volunteer in VPRF"
+                    </p>
+                    <div class="match-actions">
+                        <button class="action-btn shortlist-btn hover-target"><i class="fas fa-heart"></i>
+                            Shortlist</button>
+                        <button class="action-btn connect-btn hover-target magnetic-btn" data-url="connect.html"><i
+                                class="fas fa-comment"></i> Request Connect</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card compatibility-score">
+                <h2><i class="fas fa-star icon-left"></i> Compatibility Score</h2>
+                <div class="score-details-row">
+                    <div class="score-box">
+                        <div class="score-circle">88%</div>
+                        <p>Compatible</p>
+                    </div>
+                    <div class="details-list">
+                        <p>Based on:</p>
+                        <ul>
+                            <li>Patriotism Score (Seva credits, VPRF role)</li>
+                            <li>Education/Profession match</li>
+                            <li>Family background</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="submit-btn full-width view-details-btn hover-target magnetic-btn"
+                    data-url="details.html"><i class="fas fa-chart-bar"></i> View Details</button>
+            </section>
+
+            <section class="card family-connect">
+                <h2><i class="fas fa-users icon-left"></i> Family Connect</h2>
+                <ul>
+                    <li>Option: Invite Parents/Guardians</li>
+                    <li>Arrange family video meet via app</li>
+                </ul>
+                <button class="submit-btn full-width call-btn hover-target magnetic-btn" data-url="call.html"><i
+                        class="fas fa-video"></i> Start Family Call</button>
+            </section>
+
+            <section class="card security-trust">
+                <h2><i class="fas fa-shield-alt icon-left"></i> Security & Trust</h2>
+                <ul>
+                    <li class="verified"><i class="fas fa-check-circle"></i> Verified IDs & References</li>
+                    <li class="verified"><i class="fas fa-check-circle"></i> All chats monitored for safety</li>
+                    <li><button class="report-btn hover-target magnetic-btn" data-url="report.html"><i
+                                class="fas fa-ban"></i> Block/Report option</button></li>
+                </ul>
+            </section>
+
+            <section class="card events">
+                <h2><i class="fas fa-calendar-alt icon-left"></i> Events</h2>
+                <div class="event-list">
+                    <p>National Patriotic Matrimony Meet (Delhi, Dec)</p>
+                    <p>State-level Family Meets (quarterly)</p>
+                </div>
+                <button class="submit-btn full-width event-btn hover-target magnetic-btn" data-url="events.html"><i
+                        class="fas fa-calendar-check"></i> Register for Event</button>
+            </section>
+
+            <section class="card wallet-fees">
+                <h2><i class="fas fa-wallet icon-left"></i> Wallet & Fees</h2>
+                <ul>
+                    <li>Registration Fee: ₹500</li>
+                    <li>Event Fee: ₹1000 (state/national meets)</li>
+                    <li class="discount">Discounts for active Seva/VPRF members</li>
+                </ul>
+            </section>
+
+            <section class="card recognition">
+                <h2><i class="fas fa-medal icon-left"></i> Recognition</h2>
+                <ul>
+                    <li class="verified">Families recognized for inter-regional/unity marriages</li>
+                    <li class="verified">Patriotic Couples featured in Media Hub</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer class="footer-nav">
+            <a href="index.html" class="nav-item active hover-target"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="family.html" class="nav-item hover-target"><i class="fas fa-users"></i><span>Family
+                    Connect</span></a>
+            <a href="matrimony.html" class="nav-item hover-target"><i class="fas fa-ring"></i><span>Matrimony</span></a>
+            <a href="media.html" class="nav-item hover-target"><i class="fas fa-bullhorn"></i><span>Media</span></a>
+            <a href="membership.html" class="nav-item hover-target"><i
+                    class="fas fa-id-card"></i><span>Membership</span></a>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

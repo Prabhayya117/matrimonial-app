@@ -1,0 +1,152 @@
+/* css/effects.css */
+
+/* --- Keyframe Animations --- */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+/* --- Glossy Glass Effect (Glassmorphism) on Cards --- */
+.card {
+    /* Overwrite background color with translucent background */
+    background: var(--glass-background);
+
+    /* Core Glassmorphism Filter */
+    backdrop-filter: blur(8px) saturate(180%);
+    -webkit-backdrop-filter: blur(8px) saturate(180%);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Light border */
+    box-shadow: var(--glass-shadow);
+
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.005);
+    box-shadow: 0 12px 35px rgba(31, 38, 135, 0.25);
+}
+
+
+/* --- Glossy Dropdown Menu Example --- */
+/* (Requires specific HTML structure and JS to show/hide) */
+.glossy-dropdown {
+    position: absolute;
+    /* ... positioning properties ... */
+    padding: 15px;
+    border-radius: var(--border-radius);
+
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.4);
+    z-index: 50;
+    overflow: hidden;
+}
+
+
+/* --- Magnetic Button Effect (Requires app.js) --- */
+.magnetic-btn {
+    transition: transform 0.1s ease-out;
+    /* Crucial for smooth movement */
+}
+
+
+/* --- Custom Cursor Effect (Requires app.js) --- */
+.cursor-follower {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+/* Larger cursor state on interactive elements (triggered by JS) */
+.cursor-follower.cursor-large {
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    background-color: var(--secondary-blue);
+}
+
+/* --- Hover & Icon Animations --- */
+
+/* Hero Icon Pulse */
+.hero-icon {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Icon Float on Card Hover */
+.card:hover .icon-left {
+    animation: float 1s ease-in-out infinite;
+}
+
+/* Report Button Icon Flip/Change */
+.report-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.report-btn i {
+    position: relative;
+    z-index: 2;
+    /* Keep FA icon on top */
+    transition: transform var(--transition-speed);
+}
+
+.report-btn::before {
+    content: "\f071";
+    /* Exclamation Triangle (Font Awesome 6) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    /* Start hidden */
+    color: white;
+    font-size: 1.1rem;
+    transition: transform var(--transition-speed), opacity var(--transition-speed);
+}
+
+.report-btn:hover i {
+    /* Hide the default icon slightly */
+    transform: translateX(10px) scale(0.9);
+    opacity: 0;
+}
+
+.report-btn:hover::before {
+    /* Bring the new icon into view */
+    transform: translateY(-50%) scale(1);
+}

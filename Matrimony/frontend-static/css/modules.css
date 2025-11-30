@@ -1,0 +1,315 @@
+/* css/modules.css */
+
+/* --- Search & Match --- */
+.search-input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--subtle-grey-blue);
+    border-radius: 30px;
+    padding: 10px 25px;
+    margin: 0 20px 25px;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.search-input-group i {
+    color: var(--subtle-grey-blue);
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.search-input-group input[type="search"] {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+}
+
+.match-result {
+    background-color: var(--light-highlight);
+    border: 1px solid var(--secondary-blue);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.match-result:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(30, 136, 229, 0.15);
+}
+
+.result-header {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 5px;
+}
+
+.name-age {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.details-divider {
+    color: #888;
+    font-weight: normal;
+}
+
+.status-quote {
+    color: var(--success-green);
+    margin: 8px 0 20px 0;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.match-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.shortlist-btn {
+    background-color: var(--light-red);
+    color: var(--danger-red);
+}
+
+.shortlist-btn:hover {
+    background-color: #fcebeb;
+}
+
+.connect-btn {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.connect-btn:hover {
+    background-color: var(--dark-blue);
+}
+
+
+/* --- Compatibility Score --- */
+.score-details-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.score-box {
+    text-align: center;
+    min-width: 120px;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(var(--success-green) 80%, var(--subtle-grey-blue) 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--dark-blue);
+    margin-bottom: 5px;
+    position: relative;
+    box-shadow: 0 0 0 5px white, 0 0 0 7px var(--success-green);
+}
+
+.score-circle::after {
+    content: "88%";
+    /* Default content, can be updated dynamically */
+    position: absolute;
+    color: var(--dark-blue);
+}
+
+.details-list {
+    flex-grow: 1;
+    font-size: 0.95rem;
+}
+
+.details-list p {
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.details-list ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 5px 0 0 0;
+}
+
+.details-list li {
+    margin-bottom: 8px;
+    padding-left: 1.2em;
+    position: relative;
+}
+
+.details-list li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--success-green);
+    font-weight: bold;
+}
+
+.view-details-btn {
+    background-color: var(--secondary-blue);
+    color: white;
+}
+
+.view-details-btn:hover {
+    background-color: var(--primary-blue);
+}
+
+
+/* --- Family Connect --- */
+.family-connect ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.family-connect li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.family-connect li:last-child {
+    border-bottom: none;
+}
+
+.call-btn {
+    background-color: var(--success-green);
+    color: white;
+}
+
+.call-btn:hover {
+    background-color: #43a047;
+}
+
+/* --- Security & Trust --- */
+.security-trust ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.security-trust li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.security-trust .verified i {
+    color: var(--success-green);
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.report-btn {
+    background: none;
+    border: 2px solid var(--danger-red);
+    color: var(--danger-red);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    margin-top: 15px;
+    padding-left: 40px;
+    /* Space for hidden icon */
+}
+
+.report-btn:hover {
+    background-color: var(--danger-red);
+    color: white;
+}
+
+/* --- Events --- */
+.event-list {
+    margin-top: 10px;
+}
+
+.event-list p {
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.event-list p::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-blue);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.event-btn {
+    background-color: #ff9800;
+    /* Orange */
+    color: white;
+}
+
+.event-btn:hover {
+    background-color: #fb8c00;
+}
+
+/* --- Wallet & Fees / Membership --- */
+.wallet-fees ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 0 0;
+}
+
+.wallet-fees li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--subtle-grey-blue);
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wallet-fees li:last-child {
+    border-bottom: none;
+}
+
+.wallet-fees .discount {
+    color: var(--success-green);
+    font-weight: 700;
+}
+
+.wallet-fees .fee-amount {
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+/* --- Recognition --- */
+.recognition ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.recognition li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--dark-blue);
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.recognition li::before {
+    content: "\f091";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #ffc107;
+    margin-right: 15px;
+    font-size: 1.3rem;
+}

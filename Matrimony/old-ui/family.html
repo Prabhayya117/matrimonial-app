@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Family Connect</title>
+</head>
+
+<body>
+    <div class="custom-cursor cursor-follower"></div>
+    <div class="app-container">
+        <header class="top-bar">
+            <i class="fas fa-arrow-left hover-target"></i>
+            <div class="header-content">
+                <h1>Family Connect Hub</h1>
+                <p class="subtitle">Secure communication bridge for parents</p>
+            </div>
+        </header>
+
+        <main class="main-content-scroll">
+            <section class="hero-strip">
+                <div class="hero-content">
+                    <i class="fas fa-handshake hero-icon"></i>
+                    <div class="hero-text">
+                        <h2>Connecting Families with Values</h2>
+                        <p>Invite and manage family interactions seamlessly.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card family-invitation">
+                <h2><i class="fas fa-user-plus icon-left"></i> Invite Guardian</h2>
+                <div class="field-group">
+                    <label>Guardian/Parent's Email:</label>
+                    <input type="email" placeholder="email@example.com">
+                </div>
+                <button class="submit-btn full-width connect-btn magnetic-btn hover-target" data-url="send_invite"><i
+                        class="fas fa-envelope"></i> Send Secure Invite</button>
+            </section>
+
+            <section class="card family-status">
+                <h2><i class="fas fa-list-check icon-left"></i> Current Family Status</h2>
+                <ul class="family-connect">
+                    <li>
+                        <span>Your Family Status:</span>
+                        <span class="status-quote" style="color: var(--primary-blue);">Connected</span>
+                    </li>
+                    <li>
+                        <span>Match Family (Priya S.):</span>
+                        <button class="action-btn call-btn magnetic-btn hover-target" style="flex-grow: 0;"><i
+                                class="fas fa-video"></i> Arrange Call</button>
+                    </li>
+                    <li>
+                        <span>Match Family (Ravi K.):</span>
+                        <span class="status-quote" style="color: var(--danger-red);">Pending Approval</span>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer class="footer-nav">
+            <a href="index.html" class="nav-item hover-target"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="family.html" class="nav-item active hover-target"><i class="fas fa-users"></i><span>Family
+                    Connect</span></a>
+            <a href="matrimony.html" class="nav-item hover-target"><i class="fas fa-ring"></i><span>Matrimony</span></a>
+            <a href="media.html" class="nav-item hover-target"><i class="fas fa-bullhorn"></i><span>Media</span></a>
+            <a href="membership.html" class="nav-item hover-target"><i
+                    class="fas fa-id-card"></i><span>Membership</span></a>
+        </footer>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

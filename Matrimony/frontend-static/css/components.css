@@ -1,0 +1,330 @@
+/* css/components.css */
+
+/* --- Top Bar (Creative Header) --- */
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 18px 25px;
+    /* Use a refined, modern blue gradient */
+    background: linear-gradient(100deg, var(--primary-blue), var(--secondary-blue));
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    /* Subtle Glass Effect */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top-bar .header-content {
+    margin-left: 20px;
+}
+
+.top-bar h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.top-bar .subtitle {
+    font-size: 0.85rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* --- Hero Strip --- */
+.hero-strip {
+    background: var(--hero-gradient);
+    padding: 30px 25px;
+    color: white;
+    text-align: center;
+    box-shadow: inset 0 -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero-icon {
+    font-size: 3rem;
+    color: #ffeb3b;
+    /* Animation applied in effects.css */
+}
+
+.hero-text h2 {
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.hero-text p {
+    font-size: 0.95rem;
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+}
+
+/* --- Main Content Layout --- */
+.main-content-scroll {
+    flex-grow: 1;
+    padding-bottom: 30px;
+}
+
+/* Card base styles (Glassmorphism applied in effects.css) */
+.card {
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin: 20px;
+    /* Base for Glass */
+    border-left: 6px solid var(--primary-blue);
+    transition: transform var(--transition-speed);
+}
+
+.card h2 {
+    display: flex;
+    align-items: center;
+    color: var(--dark-blue);
+    padding-bottom: 8px;
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.icon-left {
+    margin-right: 12px;
+    color: var(--secondary-blue);
+    font-size: 1.2em;
+}
+
+/* --- Form/Input Styling (General) --- */
+.field-group {
+    margin-bottom: 20px;
+}
+
+.field-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--dark-blue);
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.field-group input,
+.field-group select {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid var(--subtle-grey-blue);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.field-group-row {
+    display: flex;
+    gap: 20px;
+}
+
+.field-group-row .field-group {
+    flex: 1;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+    outline: none;
+}
+
+/* --- Action Buttons (Shared) --- */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 15px;
+}
+
+.action-btn,
+.submit-btn,
+.connect-btn,
+.shortlist-btn,
+.view-details-btn,
+.call-btn,
+.report-btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color var(--transition-speed), transform 0.2s, box-shadow var(--transition-speed);
+    text-align: center;
+}
+
+.action-btn {
+    flex-grow: 1;
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Button Variants */
+.upload-photo {
+    background-color: var(--light-highlight);
+    color: var(--primary-blue);
+}
+
+.verify-id {
+    background-color: #e8f5e9;
+    color: var(--success-green);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 25px;
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(30, 136, 229, 0.3);
+}
+
+.submit-btn:hover {
+    background-color: var(--dark-blue);
+    box-shadow: 0 6px 12px rgba(30, 136, 229, 0.4);
+    transform: translateY(-2px);
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* --- Footer Navigation (Creative Footer) --- */
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: none;
+    background-color: var(--card-background);
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--subtle-grey-blue);
+    font-size: 0.8rem;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 60px;
+    position: relative;
+}
+
+.nav-item i {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    transition: transform var(--transition-speed);
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--primary-blue);
+}
+
+.nav-item.active i {
+    color: var(--primary-blue);
+}
+
+.nav-item:hover i {
+    transform: scale(1.1);
+}
+
+/* Active indicator circle for creative footer */
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+/* css/components.css - Add this section to the bottom */
+
+/* --- Responsive Media Query for Mobile Layouts (Stacking) --- */
+@media (max-width: 480px) {
+
+    /* Header/Top Bar Adjustment */
+    .top-bar {
+        padding: 12px 15px;
+    }
+
+    .top-bar .header-content {
+        margin-left: 10px;
+    }
+
+    .top-bar h1 {
+        font-size: 1.3rem;
+    }
+
+    /* Card Padding */
+    .card {
+        margin: 15px 0;
+        /* Use full width, minimize vertical margin */
+        padding: 20px 15px;
+        /* Decrease horizontal padding */
+        border-radius: 0;
+        /* Optional: Remove border radius on full-width mobile screens */
+    }
+
+    /* Hero Strip */
+    .hero-strip {
+        padding: 20px 15px;
+    }
+
+    /* Form Fields: Stack horizontal groups vertically */
+    .field-group-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Action Buttons: Stack horizontal button groups vertically */
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-btn {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Compatibility Score: Stack the score circle and details */
+    .score-details-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .score-box {
+        min-width: 100%;
+    }
+
+    .score-circle {
+        margin: 0 auto 10px auto;
+        /* Center the circle */
+    }
+}

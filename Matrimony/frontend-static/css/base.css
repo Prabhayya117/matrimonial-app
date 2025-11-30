@@ -1,0 +1,63 @@
+/* css/base.css */
+/* --- Base Styles --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* css/base.css - Update the body element */
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    cursor: default;
+
+    /* --- FLUID FONT SIZE IMPLEMENTATION --- */
+    /* Min size: 14px (on small phones) | Preferred size: 1vw (scales with viewport width) | Max size: 16px (on large desktops) */
+    font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+}
+
+/* Custom Cursor Follower */
+.custom-cursor {
+    pointer-events: none;
+    position: fixed;
+    z-index: 9999;
+}
+
+.app-container {
+    width: 100%;
+    /* REMOVED: max-width: 650px; */
+    /* The max-width constraint will now be handled below */
+    background-color: var(--card-background);
+    box-shadow: var(--shadow);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Responsive Media Query for Mobile Screens --- */
+/* Targetting screens smaller than typical tablets */
+@media (max-width: 650px) {
+    body {
+        /* On small screens, prevent the side background from showing */
+        justify-content: flex-start;
+        background-color: var(--card-background);
+    }
+
+    .app-container {
+        /* Force container to take full width and remove side shadows */
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+    }
+}
+
+/* Base Link/Button Transition */
+a,
+button {
+    transition: all var(--transition-speed) ease;
+}

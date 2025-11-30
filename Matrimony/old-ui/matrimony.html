@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Matrimony Matches</title>
+</head>
+
+<body>
+    <div class="custom-cursor cursor-follower"></div>
+    <div class="app-container">
+        <header class="top-bar">
+            <i class="fas fa-arrow-left hover-target"></i>
+            <div class="header-content">
+                <h1>Matrimony Matches</h1>
+                <p class="subtitle">Shortlisted, Connected, and Recommended Profiles</p>
+            </div>
+        </header>
+
+        <main class="main-content-scroll">
+            <section class="hero-strip">
+                <div class="hero-content">
+                    <i class="fas fa-heart hero-icon"></i>
+                    <div class="hero-text">
+                        <h2>Your Match Dashboard</h2>
+                        <p>Total Profiles Viewed: 45 | Shortlisted: 5 | Connected: 2</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card shortlist-display">
+                <h2><i class="fas fa-star icon-left"></i> Your Shortlist (5)</h2>
+                <p class="status-quote">Profiles you have marked for detailed review.</p>
+                <div class="match-result hover-target" style="background-color: var(--light-red);">
+                    <div class="result-header">
+                        <span class="name-age" style="color: var(--danger-red);">Arjun Sharma (30)</span>
+                        <span class="details-divider">|</span>
+                        <span class="profession">Army Officer</span>
+                    </div>
+                    <p class="status-quote" style="color: var(--danger-red);">"High Patriotism Score (95%)"</p>
+                    <div class="match-actions">
+                        <button class="action-btn connect-btn magnetic-btn hover-target"><i class="fas fa-comment"></i>
+                            Connect Now</button>
+                        <button class="action-btn shortlist-btn magnetic-btn hover-target"
+                            style="background: none; border: 1px solid var(--danger-red);"><i class="fas fa-trash"></i>
+                            Remove</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card recommended-profiles">
+                <h2><i class="fas fa-search icon-left"></i> New Recommendations</h2>
+                <div class="match-result hover-target">
+                    <div class="result-header">
+                        <span class="name-age">Ritu Verma (26)</span>
+                        <span class="details-divider">|</span>
+                        <span class="profession">IAS Officer</span>
+                    </div>
+                    <p class="status-quote">"Excellent match based on Discipline and Location."</p>
+                    <div class="match-actions">
+                        <button class="action-btn shortlist-btn magnetic-btn hover-target"><i class="fas fa-heart"></i>
+                            Shortlist</button>
+                        <button class="action-btn view-details-btn magnetic-btn hover-target"><i class="fas fa-eye"></i>
+                            View Profile</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer-nav">
+            <a href="index.html" class="nav-item hover-target"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="family.html" class="nav-item hover-target"><i class="fas fa-users"></i><span>Family
+                    Connect</span></a>
+            <a href="matrimony.html" class="nav-item active hover-target"><i
+                    class="fas fa-ring"></i><span>Matrimony</span></a>
+            <a href="media.html" class="nav-item hover-target"><i class="fas fa-bullhorn"></i><span>Media</span></a>
+            <a href="membership.html" class="nav-item hover-target"><i
+                    class="fas fa-id-card"></i><span>Membership</span></a>
+        </footer>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
